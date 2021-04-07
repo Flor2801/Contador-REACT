@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Card = ({texto, borrar}) => {
+const Card2 = ({texto, borrar}) => {
 
     const [tituloVisible, setTituloVisible] = useState(true)
 
@@ -19,4 +19,4 @@ const borrarTitulo = () =>{
     )
 }
 
-export default Card
+export default Card2

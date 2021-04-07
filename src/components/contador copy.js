@@ -5,8 +5,7 @@ const Contador2 = ({borrar}) => {
     const [valorCantidad, setValorCantidad] = useState(0);
   
     let cantidadDeClics = valorCantidad;
-    borrar()
-  
+
     const handleClickMas = () => {
       setValorCantidad(valorCantidad + 1);
     };

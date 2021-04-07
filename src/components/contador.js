@@ -2,10 +2,9 @@ import React, { useState } from 'react'
 
 
 
-const Contador = ({borrar, valor}) => {
-    const [valorCantidad, setValorCantidad] = useState(0);
+const Contador = ({valor}) => {
+    const [valorCantidad, setValorCantidad] = useState(valor);
     let cantidadDeClics = valorCantidad;
-    borrar()
   
     const handleClickMas = () => {
       setValorCantidad(valorCantidad + 1);

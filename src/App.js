@@ -40,13 +40,13 @@ const borrarTarjeta = () => {
 }
 
 
-  return (
+  return(
     <div className="contenedor">
       <p>CONTADOR - Practica de estado</p>
 
-      <Contador borrar={reiniciar} valor={valorCantidad}/>
-      <Contador2 borrar={reiniciar}/>
-      <Contador3 borrar={reiniciar}/>
+      <Contador valor={valorCantidad} />
+      <Contador2 valor={valorCantidad}/>
+      <Contador3 valor={valorCantidad}/>
 
       <button onClick={reiniciar}>BORRAR TODO</button>
 

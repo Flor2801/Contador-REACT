@@ -1,29 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
+const Contador = ({ valor }) => {
+  const [valorCantidad, setValorCantidad] = useState(valor);
+  let cantidadDeClics = valorCantidad;
 
+  const handleClickMas = () => {
+    setValorCantidad(valorCantidad + 1);
+  };
 
-const Contador = ({valor}) => {
-    const [valorCantidad, setValorCantidad] = useState(valor);
-    let cantidadDeClics = valorCantidad;
-  
-    const handleClickMas = () => {
-      setValorCantidad(valorCantidad + 1);
-    };
-  
-    const handleClickMenos = () => {
-      setValorCantidad(valorCantidad - 1);
-    };
+  const handleClickMenos = () => {
+    setValorCantidad(valorCantidad - 1);
+  };
 
-        return (
+  return (
+    <div className="counter">
+      <button onClick={handleClickMenos}>-</button>
+      <span> {cantidadDeClics} </span>
+      <button onClick={handleClickMas}>+</button>
+    </div>
+  );
+};
 
-  <div className="counter">
-    <button onClick={handleClickMenos}>-</button>
-    <span> {cantidadDeClics} </span>
-    <button onClick={handleClickMas}>+</button>
-  </div>
-
-        )
-
-}
-
-export default Contador
+export default Contador;

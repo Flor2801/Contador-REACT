@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-
-const Contador3 = ({valor}) => {
+const Contador3 = ({ valor }) => {
   const [valorCantidad, setValorCantidad] = useState(valor);
   let cantidadDeClics = valorCantidad;
 
@@ -13,16 +12,13 @@ const Contador3 = ({valor}) => {
     setValorCantidad(valorCantidad - 1);
   };
 
-      return (
+  return (
+    <div className="counter">
+      <button onClick={handleClickMenos}>-</button>
+      <span> {cantidadDeClics} </span>
+      <button onClick={handleClickMas}>+</button>
+    </div>
+  );
+};
 
-<div className="counter">
-  <button onClick={handleClickMenos}>-</button>
-  <span> {cantidadDeClics} </span>
-  <button onClick={handleClickMas}>+</button>
-</div>
-
-      )
-
-}
-
-export default Contador3
+export default Contador3;

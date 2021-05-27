@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 
-const Card = ({texto, borrar}) => {
+const Card = ({texto, borrar, funcion}) => {
 
     const [tituloVisible, setTituloVisible] = useState(true)
+  
 
 const borrarTitulo = () =>{
     setTituloVisible(false)
 }
+
 
 
     return(
@@ -15,6 +17,7 @@ const borrarTitulo = () =>{
             {tituloVisible && <h5>Subtitulo</h5>}
             <button onClick={borrarTitulo}>BORRAR SUBTITULO</button>
             <button onClick={borrar}>BORRAR TARJETA</button>
+            <button onClick={funcion}>FUNCION</button>
         </div>
     )
 }

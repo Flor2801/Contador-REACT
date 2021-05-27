@@ -8,11 +8,13 @@ import Contador3 from "components/contador copy 2";
 import Card from "components/card";
 import Card2 from "components/card copy";
 
+//////// CONTADOR, SALUDADOR, SUPERHEROE Y TARJETAS ////////
+
 const App = () => {
   const [textoNombre, setNombre] = useState("usuario");
   const [valorDelInput, setInput] = useState("");
   const [valorCantidad, setValorCantidad] = useState(0);
-
+  const [tarjetaVisible, setTarjetaVisible] = useState(true);
 
   const handleClickSaludo = () => {
     console.log("hola");
@@ -29,24 +31,25 @@ const App = () => {
   };
 
   const funciondeejemplo = () => {
-    console.log("test ejemplo")
-}
+    console.log("test ejemplo");
+  };
 
-const [tarjetasVisibles, setTarjetasVisibles] = useState(true)
-
-
-const borrarTarjeta = () => {
-    setTarjetasVisibles(false)
+  const borrarTarjeta = () => {
+    setTarjetaVisible(false);
 }
 
 
-  return(
+
+
+  //////// CONTADOR, SALUDADOR, SUPERHEROE Y TARJETAS ////////
+
+  return (
     <div className="contenedor">
       <p>CONTADOR - Practica de estado</p>
 
       <Contador valor={valorCantidad} />
-      <Contador2 valor={valorCantidad}/>
-      <Contador3 valor={valorCantidad}/>
+      <Contador2 valor={valorCantidad} />
+      <Contador3 valor={valorCantidad} />
 
       <button onClick={reiniciar}>BORRAR TODO</button>
 
@@ -63,24 +66,36 @@ const borrarTarjeta = () => {
         </div>
       </div>
 
-      <Muestraestado/>
+      <Muestraestado />
 
+      <div className="tarjetas">
+        <Card
+          texto="Hola soy tarjeta 1"
+          funcion={funciondeejemplo}
+          borrar={borrarTarjeta}
+        
+        />
+       
+      <Card
+          texto="Hola soy tarjeta 2"
+          funcion={funciondeejemplo}
+          borrar={borrarTarjeta}
+     
+        />
 
-{
-tarjetasVisibles && 
-<div className="tarjetas">
+        <Card
+          texto="Hola soy tarjeta 3"
+          funcion={funciondeejemplo}
+        
+        />
 
-    <Card texto="Hola soy tarjeta 1" funcion={funciondeejemplo} borrar={borrarTarjeta}/>
-    <Card2 texto="Hola soy tarjeta 2" funcion={funciondeejemplo} borrar={borrarTarjeta}/>
-    <Card texto="Hola soy tarjeta 3" funcion={funciondeejemplo}/>
-    <Card texto="Hola soy tarjeta 4" funcion={funciondeejemplo}/>
+        <Card
+          texto="Hola soy tarjeta 4"
+          funcion={funciondeejemplo}
+       
+        />
 
-
-</div>
-}
-
-
-
+      </div>
     </div>
   );
 };
